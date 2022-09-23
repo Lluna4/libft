@@ -19,3 +19,5 @@ jobs:
       run: make fclean 
     - name: make re
       run: make re
+    - name: make all
+      run: make all
