@@ -27,6 +27,7 @@ SRC = ft_isascii.c \
 	ft_memcmp.c \
 	ft_strdup.c \
 	ft_strnstr.c \
+	ft_substr.c \
 
 OBJ = ${SRC:.c=.o} 
 
@@ -42,7 +43,7 @@ clean:
 fclean: clean
 	rm -rf ${NAME}
 
-re: fclean
-	all
+re: fclean all
+	
 
 .PHONY: all clean fclean re
