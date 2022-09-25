@@ -6,7 +6,7 @@
 /*   By: ltranca- <ltranca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:07:25 by ltranca-          #+#    #+#             */
-/*   Updated: 2022/09/23 16:46:09 by ltranca-         ###   ########.fr       */
+/*   Updated: 2022/09/25 15:59:38 by ltranca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,24 @@
 size_t  ft_strlcat(char *dest, const char *src, size_t size)
 {
     int n;
-    int len;
+    int lend;
+    int lens;
     int n2;
-    int a;
-    int ret;
 
-    //ret = size + ft_strlen(src);
-    if ((size <= 0))
-        return (ft_strlen(dest) + ft_strlen(src));
-    n = ft_strlen(dest) -1;
-    len = ft_strlen(src);
-    n2 = -1;
-    a = size + len;
-    ret = n + len;
-    while (n < size)
-    {
-        n++;
-        n2++;
-        dest[n] = src[n2];
-    }
-    dest[n] = '\0';
-    return (ret + 1);
+    lend = ft_strlen(dest);
+    if (!(lend < size))
+        lend = size;
+    lens = ft_strlen(src);
+    n = lend;
+    n2 = 0;
+    if (lend == size)
+        return (size + lens);
+    if (lens < size-lend)
+        ft_memcpy(dest+lend, src, lens+1);
+    else
+        ft_memcpy(dest+lend, src, size-lend-1);
+        dest[size-1] = '\0';
+    return (lend + lens); 
 }
 
 /* int main(void)

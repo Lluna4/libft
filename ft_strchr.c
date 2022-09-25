@@ -6,7 +6,7 @@
 /*   By: ltranca- <ltranca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 10:53:05 by ltranca-          #+#    #+#             */
-/*   Updated: 2022/09/23 17:37:08 by ltranca-         ###   ########.fr       */
+/*   Updated: 2022/09/25 18:01:57 by ltranca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ char	*ft_strchr(const char *a, int ch)
 	return(ft_memchr(a, ch, ft_strlen(a) + 1));
 }
 
+/*
 int main(void)
 {
 	char *c;
@@ -28,4 +29,4 @@ int main(void)
 	d = strrchr(b, 'n');
 	printf("%s\n", c);
 	printf("%s", d);
-} 
+} */

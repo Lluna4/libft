@@ -6,7 +6,7 @@
 /*   By: ltranca- <ltranca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 13:52:57 by ltranca-          #+#    #+#             */
-/*   Updated: 2022/09/19 17:25:18 by ltranca-         ###   ########.fr       */
+/*   Updated: 2022/09/25 18:04:33 by ltranca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void *ft_memchr(const void *s, int c, size_t size)
 	while (size > 0)
 	{
 		if (*(unsigned char *)s == chr)
-			return((void *)s);
+			return(((unsigned char *)s));
 		size--;
 		s++;
 	}

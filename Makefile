@@ -7,7 +7,6 @@ FLAGS = -Wall -Wextra -Werror
 SRC = ft_isascii.c \
 	ft_memcpy.c \
 	ft_strlcat.c \
-	ft_strrchr.c \
 	ft_bzero.c \
 	ft_isdigit.c \
 	ft_memmove.c \

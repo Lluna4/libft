@@ -6,7 +6,7 @@
 /*   By: ltranca- <ltranca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 12:45:04 by ltranca-          #+#    #+#             */
-/*   Updated: 2022/09/23 15:04:30 by ltranca-         ###   ########.fr       */
+/*   Updated: 2022/09/25 18:12:27 by ltranca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,18 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	n = 0;
 	if (!(size <= 0))
 	{
-		while (n < size - 1)
+		while (src[n] != '\0')
 		{
+			if (n == size)
+			{
+				n--;
+				break ;
+			}
 			dest[n] = src[n];
 			n++;
 		}
 		dest[n] = '\0';
 	}
-
 	return (ft_strlen(src));
 }	
 
