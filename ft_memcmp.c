@@ -6,7 +6,7 @@
 /*   By: ltranca- <ltranca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 11:47:06 by ltranca-          #+#    #+#             */
-/*   Updated: 2022/09/25 17:39:36 by ltranca-         ###   ########.fr       */
+/*   Updated: 2022/09/26 17:41:10 by ltranca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ int ft_memcmp(const void *a, const void *b, size_t size)
 /* int main(void)
 {
     int c;
-
 	c = ft_memcmp("holb", "hola", 4);
     printf("%d", c);
 } */

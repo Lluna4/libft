@@ -6,7 +6,7 @@
 /*   By: ltranca- <ltranca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 17:07:19 by ltranca-          #+#    #+#             */
-/*   Updated: 2022/09/23 18:07:11 by ltranca-         ###   ########.fr       */
+/*   Updated: 2022/09/26 15:13:50 by ltranca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ size_t  ft_strlcat(char *dest, const char *src, size_t size);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 size_t	ft_strlen(const char *a);
 int	ft_strncmp(const char *a, const char *b, int ch);
-char    *ft_strnstr(const char *a, const char *b, int ch);
+char    *ft_strnstr(const char *a, const char *b, size_t size);
 char	*ft_strchr(const char *a, int ch);
 int	ft_tolower(int a);
 int	ft_toupper(int a);
