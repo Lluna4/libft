@@ -6,7 +6,7 @@
 /*   By: ltranca- <ltranca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 17:07:19 by ltranca-          #+#    #+#             */
-/*   Updated: 2022/09/26 15:13:50 by ltranca-         ###   ########.fr       */
+/*   Updated: 2022/10/01 13:24:35 by ltranca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ char	*ft_strchr(const char *a, int ch);
 int	ft_tolower(int a);
 int	ft_toupper(int a);
 char *ft_substr(char const *s, unsigned int start, size_t len);
+int ft_atoi(const char *a);
 
 
 
