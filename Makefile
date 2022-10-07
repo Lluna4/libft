@@ -28,6 +28,7 @@ SRC = ft_isascii.c \
 	ft_strnstr.c \
 	ft_substr.c \
 	ft_atoi.c \
+	ft_strjoin.c \
 
 OBJ = ${SRC:.c=.o} 
 
