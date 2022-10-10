@@ -6,7 +6,7 @@
 /*   By: ltranca- <ltranca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 17:07:19 by ltranca-          #+#    #+#             */
-/*   Updated: 2022/10/07 16:42:34 by ltranca-         ###   ########.fr       */
+/*   Updated: 2022/10/10 14:38:33 by ltranca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,6 @@ int		ft_toupper(int a);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_atoi(const char *a);
 char    *ft_strjoin(char const *s1, char const *s2);
+char    *ft_strtrim(char const *s1, char const *set);
 
 #endif
