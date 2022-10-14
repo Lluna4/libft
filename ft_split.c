@@ -12,58 +12,73 @@
 
 #include "libft.h"
 
-static size_t  ft_pallen(char *a, char ch)
+static int *ft_pallen(char *a, char ch)
 {
-    size_t len;
+    size_t  len;
+    char    *pch;
+    int     *pallen; 
+    char    *b;
+    int     len2;
     
+    pallen = malloc(50 * sizeof(int));
     len = 1;
+    len2 = 0;
+    pch = &ch;
+    pallen++;
     while (*a)
     {
+        b = a;
+        len2++;
         if (*a == ch)
         {
+            *pallen = len2;
             len++;
             a++;
-            ft_strtrim(a, " ");
+            a = ft_strtrim(a, " ");
+            len2 = ft_strlen(b) - ft_strlen(a) - 1;
+            pallen++;
         }
         a++;
     }
-    return (len);
+    pallen = pallen - len;
+    pallen[0] = len;
+    return (pallen);
 }
 
 char **ft_split(char const *s, char c)
 {
     char **ret;
     char *buff;
-    int n;
+    int *n;
     int pointer;
     
     if (!s || !c)
         return ("\0");
-    n = -1;
+    n = ft_pallen(s, c);
+    n++;
     pointer = -1;
     s = ft_strtrim(s, " ");
-    ret = ft_calloc(ft_pallen(s, c) + 1, sizeof(char *));
+    ret = ft_calloc(ft_pallen(s, c)[0] + 1, sizeof(char *));
     if (!ret)
         return ("\0");
     while (*s)
     {
-        n++;
         if (*s == c)
         {
             pointer++;
-            s = s - n;
-            ret[pointer] = ft_substr(s, 0, n);
-            s = s + n + 1;
+            s = s - *n;
+            ret[pointer] = ft_substr(s, 0, *n);
+            s = s + *n + 1;
             n = 0;
             s = ft_strtrim(s, " ");
+            n++;
         }
         s++;
     }
-    n++;
     pointer++;
-    s = s - n;
-    ret[pointer] = ft_substr(s, 0, n);
-    s = s + n + 1;
+    s = s - *n;
+    ret[pointer] = ft_substr(s, 0, *n);
+    s = s + *n + 1;
     n = 0;
     return (ret);
 }
