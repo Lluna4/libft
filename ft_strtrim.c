@@ -16,7 +16,7 @@ static char	*ft_make_ret(char *s1, char *backpointer)
 {
 	int		n;
 	char	*ret;
-	
+
 	n = 0;
 	if (*s1 == '\0')
       return("\0");

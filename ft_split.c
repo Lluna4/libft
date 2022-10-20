@@ -9,77 +9,59 @@
 /*   Updated: 2022/10/12 18:26:58 by ltranca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
 #include "libft.h"
 
 static int *ft_pallen(char *a, char ch)
 {
-    size_t  len;
-    char    *pch;
-    int     *pallen; 
-    char    *b;
-    int     len2;
-    
-    pallen = malloc(50 * sizeof(int));
+    int   *ret;
+    int   len;
+    int   len2;
+
     len = 1;
-    len2 = 0;
-    pch = &ch;
-    pallen++;
-    while (*a)
+    len2 = -1;
+    while(*a)
     {
-        b = a;
         len2++;
         if (*a == ch)
         {
-            *pallen = len2;
+            if (len <= 1)
+            {
+                continue ;
+            }
             len++;
-            a++;
-            a = ft_strtrim(a, " ");
-            len2 = ft_strlen(b) - ft_strlen(a) - 1;
-            pallen++;
         }
-        a++;
     }
-    pallen = pallen - len;
-    pallen[0] = len;
-    return (pallen);
-}
+}*/
 
-char **ft_split(char const *s, char c)
+/*
+char ** ft_split (char const *s, char c)
 {
     char **ret;
     char *buff;
     int *n;
     int pointer;
-    
+    char *pch;
+
+    pch = &c;
     if (!s || !c)
-        return ("\0");
+        return (NULL);
     n = ft_pallen(s, c);
-    n++;
     pointer = -1;
-    s = ft_strtrim(s, " ");
-    ret = ft_calloc(ft_pallen(s, c)[0] + 1, sizeof(char *));
+    ret = ft_calloc(n[0] + 1, sizeof (char *));
+    n++;
     if (!ret)
-        return ("\0");
+        return (NULL);
     while (*s)
     {
-        if (*s == c)
+        while (*s == c && *s)
         {
-            pointer++;
-            s = s - *n;
-            ret[pointer] = ft_substr(s, 0, *n);
-            s = s + *n + 1;
-            n = 0;
-            s = ft_strtrim(s, " ");
-            n++;
+            s++;
         }
-        s++;
+        pointer++;
+        ret[pointer] = ft_substr(s, 0, *n);
+        s = s + *n;
+        n++;
     }
-    pointer++;
-    s = s - *n;
-    ret[pointer] = ft_substr(s, 0, *n);
-    s = s + *n + 1;
-    n = 0;
-    return (ret);
-}
-
+    return(ret);
+}*/
