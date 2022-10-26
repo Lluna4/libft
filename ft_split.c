@@ -3,69 +3,57 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ltranca- <ltranca-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 15:17:15 by ltranca-          #+#    #+#             */
-/*   Updated: 2022/10/12 18:26:58 by ltranca-         ###   ########.fr       */
+/*   Updated: 2022/10/27 00:58:01 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int *ft_pallen(char *a, char ch) // Hacer free function, hacer una funcion que cuente palabras caracteres y caracteres
+static int ft_wordcount(char *a, char ch)
 {
-    int   *ret;
-    int   len;
-    int   len2;
-    int   len3;
-
-    len = 1;
-    len2 = strlen(a);
-    len3 = 0;
-    ret = malloc(len2 * sizeof(int) + 1);
-    ret++;
-    while(*a)
+    int n;
+    
+    n = 1;
+    while (*a)
     {
-        len3++;
         if (*a == ch)
         {
-            if (len3 <= 1)
-            {
-                while (*a == ch)
-                    a++;
-                len3 = 0;
-                continue ;
-            }
-            len++;
-            a--;
-            len3 = 0;
-            *ret = len3;
-            ret++;
+            n++;
+            a = ft_strtrim(a, ch);
         }
         a++;
     }
-    len++;
-    a--;
-    len3 = 0;
-    *ret = len3;
-    ret++;
-    ret = ret - len;
-    *ret = len;
-    return (ret);
+    return (n);
 }
 
-char ** ft_split (char const *s, char c)
+static int ft_charcount(char *a, char ch)
+{
+    int len;
+
+    len = 0;
+    while (*a != ch)
+    {
+        len++;
+        a++;
+    }
+    return (len);
+}
+
+char ** ft_split (char const *s, char c) //adaptar split a las nuevas funciones
 {
     char **ret;
     char *buff;
-    int *n;
+    int n;
     int pointer;
 
     if (!s || !c)
         return (NULL);
-    n = ft_pallen(s, c);
+    n = ft_wordcount(s, c);
     pointer = -1;
-    ret = calloc(n[0] + 1, sizeof (char *));
+    ret = calloc(n + 1, sizeof (char *));
     n++;
     if (!ret)
         return (NULL);
