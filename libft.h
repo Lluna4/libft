@@ -6,7 +6,7 @@
 /*   By: ltranca- <ltranca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 17:07:19 by ltranca-          #+#    #+#             */
-/*   Updated: 2022/11/04 15:13:05 by ltranca-         ###   ########.fr       */
+/*   Updated: 2022/11/04 19:04:57 by ltranca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,6 @@ void    ft_putchar_fd(char c, int fd);
 void    ft_putstr_fd(char *s, int fd);
 void    ft_putendl_fd(char *s, int fd);
 char    *ft_itoa(int n);
+void    ft_putnbr_fd(int n, int fd);
 
 #endif

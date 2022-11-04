@@ -6,7 +6,7 @@
 /*   By: ltranca- <ltranca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 14:51:16 by ltranca-          #+#    #+#             */
-/*   Updated: 2022/11/04 17:33:46 by ltranca-         ###   ########.fr       */
+/*   Updated: 2022/11/04 18:50:24 by ltranca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int ft_intlen(int n)
     return (ret);
 }
 
-char *ft_make_ret(int n, int sign)
+static char *ft_make_ret(int n, int sign)
 {
     int len;
     char *ret;

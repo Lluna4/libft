@@ -35,6 +35,7 @@ SRC = ft_isascii.c \
 	ft_putstr_fd.c \
 	ft_putendl_fd.c \
 	ft_itoa.c \
+	ft_putnbr_fd.c \
 	
 OBJ = ${SRC:.c=.o} 
 
