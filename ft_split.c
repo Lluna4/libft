@@ -6,7 +6,7 @@
 /*   By: ltranca- <ltranca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 15:17:15 by ltranca-          #+#    #+#             */
-/*   Updated: 2022/10/27 18:30:55 by ltranca-         ###   ########.fr       */
+/*   Updated: 2022/10/31 18:19:01 by ltranca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,10 @@ void ft_freeall(char **s)
     int n;
 
     n = -1;
-    while (s[n] != NULL)
+    while (*s)
     {
-        n++;
-        free(s[n]);
+        s++;
+        free(*s);
     }
 }
 
@@ -65,14 +65,16 @@ char ** ft_split (char const *s, char c) //casi casi funciona haz que freeall fu
 
     if (!s || !c)
         return (NULL);
-    while (*s == c)
+    while (*s == c && *s)
       s++;
     n = ft_wordcount(s, c);
     ret = ft_calloc(n + 1, sizeof(char *));
+    if (!ret)
+        return ("\0");
     pointer = -1;
     while (*s)
     {
-        while (*s == c)
+        while (*s == c && *s)
           s++;
         n = ft_charcount(s, c);
         if (n <= 0)
@@ -80,7 +82,6 @@ char ** ft_split (char const *s, char c) //casi casi funciona haz que freeall fu
             //freeall
             if (*s == '\0')
             {
-                //ft_freeall(ret);
                 break ;
             }
             else

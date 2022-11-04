@@ -6,7 +6,7 @@
 /*   By: ltranca- <ltranca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 11:36:18 by ltranca-          #+#    #+#             */
-/*   Updated: 2022/10/07 13:12:47 by ltranca-         ###   ########.fr       */
+/*   Updated: 2022/10/31 20:08:52 by ltranca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 int	ft_strncmp(const char *a, const char *b, int ch)
 
 {
-    while (ch != 0)
+    while (ch != 0) 
     {
         if (*((unsigned char *)a) != *((unsigned char *)b))
             return (*((unsigned char *)a) - *((unsigned char *)b));
