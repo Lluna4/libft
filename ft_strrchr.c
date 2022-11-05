@@ -12,33 +12,21 @@
 
 #include "libft.h"
 
-char	*ft_strchr(const char *a, int ch)
+char	*ft_strrchr(const char *a, int ch)
 
 {
-	int			n;
-	int			c;
-	static char	b[50];
+    char *ret;
 
-	n = -1;
-	while (1)
-	{
-		n++;
-		if ((int)a[n] == 0)
-			return (0);
-		if ((int)a[n] == ch)
-		{
-			c = n - 1;
-			n = -1;
-			while (1)
-			{
-				n++;
-				c++;
-				b[n] = a[c];
-				if ((int)a[c] == 0)
-					return (b);
-			}
-		}
-	}
+    ret = 0;
+    while (*a)
+    {
+        if (*a == ch)
+            ret = (char *)a;
+        a++;
+    }
+    if (ch == 0)
+        return ((char *)a);
+    return (ret);
 }
 
 /* int main(void)
