@@ -14,7 +14,7 @@
 int	ft_strncmp(const char *a, const char *b, int ch)
 
 {
-    while (ch != 0) 
+    while (ch != 0 && (*a || *b))
     {
         if (*((unsigned char *)a) != *((unsigned char *)b))
             return (*((unsigned char *)a) - *((unsigned char *)b));

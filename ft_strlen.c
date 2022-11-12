@@ -17,15 +17,13 @@ size_t	ft_strlen(const char *a)
 {
 	size_t n;
 
-	n = -1;
-	while (1)
-	{
-		n++;
-		if ((int)a[n] == 0)
-		{
-			return (n);
-		}
-	}
+	n = 0;
+	while (*a)
+    {
+        n++;
+        a++;
+    }
+    return (n);
 }
 
 /* int main(void)
