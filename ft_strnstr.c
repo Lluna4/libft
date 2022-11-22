@@ -6,53 +6,48 @@
 /*   By: ltranca- <ltranca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 12:07:50 by ltranca-          #+#    #+#             */
-/*   Updated: 2022/10/10 18:37:48 by ltranca-         ###   ########.fr       */
+/*   Updated: 2022/11/22 14:41:32 by ltranca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strnstr(const char *a, const char *b, size_t size) //strchr pero con mas de un caracter
+char	*ft_strnstr(const char *a, const char *b, size_t size)
 
 {
-    int n;
-    int n2;
-    int n3;
-    int n4;
-    char *buff;
-    
-    buff = ft_memchr(a, b[0], size); 
-    n = 0;
-    n2 = ft_strlen(b);
-    n4 = ft_strlen(a);
-    if (b[0] == '\0' || ft_strncmp(a, b, ft_strlen(b)) == 0)
-      return(a);
-    while (n < size)
-    {
-      if (!buff)
-        return(0);
-      if (a == '\0')
-        break;
-      n3 = 0;
-      while (*b != '\0' || *a != '\0')
-      {
-          if (*b != *a)
-              break;
-          b++;
-          a++;
-          n3++;
-      }
-       if (n3 > size || n4 - ft_strlen(a) >= size)
-        break;
-       if (*b == '\0')
-        return (a - n2);
-       b = b - n3;
-       a = a - n3;
-       a++;
-       buff = ft_memchr(a, b[0], size);
-       n++;
-    }
-    return (0);
+	int		len;
+	int		n;
+	int		len2;
+	char	*buff;
+
+	len = ft_strlen(b) - 1;
+	len2 = ft_strlen(a);
+	buff = (char *)a;
+	if (*b == '\0')
+		return (a);
+	while (ft_strlen(a) > len && *a != '\0' && (len2 - ft_strlen(a)) < size)
+	{
+		n = len;
+		a = ft_strchr(a, b[0]);
+		if (a == NULL)
+			return (0);
+		a = a + len;
+		if ((len2 - (ft_strlen(a) - 1)) > size)
+			break ;
+		while (n != 0)
+		{
+			if (*a != b[n])
+				break ;
+			else
+			{
+				a--;
+				n--;
+			}
+		}
+		if (n == 0)
+			return (a);
+	}
+	return (0);
 }
 
 /*

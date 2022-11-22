@@ -6,7 +6,7 @@
 /*   By: ltranca- <ltranca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 15:10:29 by ltranca-          #+#    #+#             */
-/*   Updated: 2022/10/07 15:52:53 by ltranca-         ###   ########.fr       */
+/*   Updated: 2022/11/22 15:14:15 by ltranca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ char	*ft_strdup(const char *s1)
 	char	*ret;
 
 	n = ft_strlen(s1);
-	ret = malloc(n + 1);
+	ret = malloc((n + 1) * sizeof(char));
 	if (!ret)
 		return (0);
-	ft_strlcpy(ret, s1, n);
+	ret = ft_memcpy(ret, s1, n + 1);
 	return (ret);
 }
 
