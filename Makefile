@@ -39,7 +39,10 @@ SRC = ft_isascii.c \
 	ft_strmapi.c \
 	ft_striteri.c \
 	ft_strrchr.c \
-	
+
+BONUS_SRC = ft_lstnew_bonus.c \
+
+
 OBJ = ${SRC:.c=.o} 
 
 

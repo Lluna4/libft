@@ -6,7 +6,7 @@
 /*   By: ltranca- <ltranca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 12:15:42 by ltranca-          #+#    #+#             */
-/*   Updated: 2022/09/26 15:39:57 by ltranca-         ###   ########.fr       */
+/*   Updated: 2022/12/04 16:43:12 by ltranca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t size)
 
-{	char	*buff;
+{	
+	char	*buff;
 	char	*buff2;
 
 	buff = (char *)dest;
@@ -23,7 +24,7 @@ void	*ft_memmove(void *dest, const void *src, size_t size)
 		return (0);
 	if (dest < src)
 		ft_memcpy(dest, src, size);
-	else 
+	else
 	{
 		while (size > 0)
 		{
@@ -33,4 +34,3 @@ void	*ft_memmove(void *dest, const void *src, size_t size)
 	}
 	return (dest);
 }
-

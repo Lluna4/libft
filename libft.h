@@ -6,7 +6,7 @@
 /*   By: ltranca- <ltranca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 17:07:19 by ltranca-          #+#    #+#             */
-/*   Updated: 2022/11/04 19:04:57 by ltranca-         ###   ########.fr       */
+/*   Updated: 2022/12/02 13:35:19 by ltranca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
+
+typedef struct s_list
+{
+void *content;
+struct s_list *next;
+} t_list;   
 
 void	ft_bzero(void *a, size_t size);
 void	*ft_calloc(size_t count, size_t size);
