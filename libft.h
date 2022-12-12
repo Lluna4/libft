@@ -6,7 +6,7 @@
 /*   By: ltranca- <ltranca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 17:07:19 by ltranca-          #+#    #+#             */
-/*   Updated: 2022/12/02 13:35:19 by ltranca-         ###   ########.fr       */
+/*   Updated: 2022/12/12 16:17:56 by ltranca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,6 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
-
-typedef struct s_list
-{
-void *content;
-struct s_list *next;
-} t_list;   
 
 void	ft_bzero(void *a, size_t size);
 void	*ft_calloc(size_t count, size_t size);
@@ -48,16 +42,16 @@ int		ft_tolower(int a);
 int		ft_toupper(int a);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_atoi(const char *a);
-char    *ft_strjoin(char const *s1, char const *s2);
-char    *ft_strtrim(char const *s1, char const *set);
-char    **ft_split(char const *s, char c);
-void    ft_putchar_fd(char c, int fd);
-void    ft_putstr_fd(char *s, int fd);
-void    ft_putendl_fd(char *s, int fd);
-char    *ft_itoa(int n);
-void    ft_putnbr_fd(int n, int fd);
-char    *ft_strmapi(char const *s, char (*f)(unsigned int, char));
-void    ft_striteri(char *s, void (*f)(unsigned int, char*));
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s1, char const *set);
+char	**ft_split(char const *s, char c);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+char	*ft_itoa(int n);
+void	ft_putnbr_fd(int n, int fd);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strrchr(const char *a, int ch);
 
 #endif

@@ -6,16 +6,44 @@
 /*   By: ltranca- <ltranca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 12:07:50 by ltranca-          #+#    #+#             */
-/*   Updated: 2022/12/04 17:54:46 by ltranca-         ###   ########.fr       */
+/*   Updated: 2022/12/12 18:10:58 by ltranca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static char	*ft_test(char *a, int len2, int s, char *b)
+{
+	int	n;
+
+	while (len2 > (ft_strlen(b) - 1) && *a != '\0' && (len2 - ft_strlen(a)) < s)
+	{
+		n = (ft_strlen(b) - 1);
+		a = ft_strchr(a, b[0]);
+		if (a == NULL)
+			return (0);
+		a = a + (ft_strlen(b) - 1);
+		if ((len2 - (ft_strlen(a) - 1)) > (unsigned int)s)
+			break ;
+		while (n != 0)
+		{
+			if (*a != b[n])
+			{
+				a = a - n + 1;
+				break ;
+			}
+			a--;
+			n--;
+		}
+		if (n == 0)
+			return ((char *)a);
+	}
+	return (0);
+}
+
 char	*ft_strnstr(const char *a, const char *b, size_t size)
 {
 	int		len;
-	int		n;
 	int		len2;
 	char	*buff;
 
@@ -26,32 +54,7 @@ char	*ft_strnstr(const char *a, const char *b, size_t size)
 		size = ft_strlen(a);
 	if (*b == '\0')
 		return ((char *)a);
-	while (ft_strlen(a) > len && *a != '\0' && (len2 - ft_strlen(a)) < size)
-	{
-		n = len;
-		a = ft_strchr(a, b[0]);
-		if (a == NULL)
-			return (0);
-		a = a + len;
-		if ((len2 - (ft_strlen(a) - 1)) > (unsigned int)size)
-			break ;
-		while (n != 0)
-		{
-			if (*a != b[n])
-			{
-				a = a - n + 1;
-				break ;
-			}
-			else
-			{
-				a--;
-				n--;
-			}
-		}
-		if (n == 0)
-			return ((char *)a);
-	}
-	return (0);
+	return (ft_test((char *)a, len2, size, (char *)b));
 }
 
 /*

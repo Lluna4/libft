@@ -6,7 +6,7 @@
 /*   By: ltranca- <ltranca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 11:35:56 by ltranca-          #+#    #+#             */
-/*   Updated: 2022/09/19 17:25:25 by ltranca-         ###   ########.fr       */
+/*   Updated: 2022/12/12 16:13:58 by ltranca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,16 @@
 char	*ft_strrchr(const char *a, int ch)
 
 {
-    int index;
+	int	index;
 
-    index = ft_strlen(a);
-
-    while (index >= 0)
-    {
-        if ((unsigned char)a[index] == (unsigned char)ch)
-            return ((char *)a + index);
-        index--;
-    }
-    return (0);
+	index = ft_strlen(a);
+	while (index >= 0)
+	{
+		if ((unsigned char)a[index] == (unsigned char)ch)
+			return ((char *)a + index);
+		index--;
+	}
+	return (0);
 }
 
 /* int main(void)

@@ -6,7 +6,7 @@
 /*   By: ltranca- <ltranca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 13:56:12 by ltranca-          #+#    #+#             */
-/*   Updated: 2022/11/29 16:18:31 by ltranca-         ###   ########.fr       */
+/*   Updated: 2022/12/12 16:14:58 by ltranca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static char	*ft_make_ret(char *s1, char *backpointer)
 
 	n = 0;
 	if (*s1 == '\0')
-      return (ft_strdup(""));
+		return (ft_strdup(""));
 	ret = ft_calloc(ft_strlen(s1--) - ft_strlen(backpointer) + 2, sizeof(char));
 	if (!ret)
 		return (NULL);
