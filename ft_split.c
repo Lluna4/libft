@@ -6,7 +6,7 @@
 /*   By: ltranca- <ltranca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 15:17:15 by ltranca-          #+#    #+#             */
-/*   Updated: 2022/12/12 17:51:46 by ltranca-         ###   ########.fr       */
+/*   Updated: 2022/12/14 16:29:52 by ltranca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,13 +61,12 @@ char	**ft_freeall(char **s)
 	return ((char **)(ft_strdup(" ")));
 }
 
-static char	**ft_test(char *s, char c, char **ret, char *buff)
+static char	**ft_test(char *s, char c, char **ret, int n)
 {
-	int	pointer;
-	int	n;
+	int		pointer;
+	char	*buff;
 
 	pointer = -1;
-	n = ft_wordcount(s, c);
 	while (*s)
 	{
 		while (*s == c && *s)
@@ -94,10 +93,7 @@ char	**ft_split(char const *s, char c)
 {
 	char	**ret;
 	int		n;
-	char	*buff;
 
-	buff = ft_calloc(ft_strlen(s), sizeof(char));
-	ft_memcpy(buff, (char *)s, ft_strlen(s));
 	if (!s)
 		return (NULL);
 	while (*s == c && *s)
@@ -106,5 +102,5 @@ char	**ft_split(char const *s, char c)
 	ret = ft_calloc(n + 1, sizeof(char *));
 	if (!ret)
 		return (NULL);
-	return (ft_test((char *)s, c, ret, buff));
+	return (ft_test((char *)s, c, ret, n));
 }

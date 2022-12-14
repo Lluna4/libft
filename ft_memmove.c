@@ -6,7 +6,7 @@
 /*   By: ltranca- <ltranca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 12:15:42 by ltranca-          #+#    #+#             */
-/*   Updated: 2022/12/04 16:43:12 by ltranca-         ###   ########.fr       */
+/*   Updated: 2022/12/14 16:42:29 by ltranca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_memmove(void *dest, const void *src, size_t size)
 
 	buff = (char *)dest;
 	buff2 = (char *)src;
-	if (*buff == '\0' && *buff2 == '\0')
+	if (buff == (void *) '\0' && buff2 == (void *) '\0')
 		return (0);
 	if (dest < src)
 		ft_memcpy(dest, src, size);
