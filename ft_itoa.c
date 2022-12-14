@@ -48,12 +48,10 @@ static char	*ft_make_ret(int n, int sign)
 
 char	*ft_itoa(int n)
 {
-	int		len;
 	char	*ret;
 	int		sign;
 
 	sign = 0;
-	len = 0;
 	if (n == -2147483648)
 	{
 		ret = malloc(12 * sizeof(char));

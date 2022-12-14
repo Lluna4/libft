@@ -37,7 +37,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*backpointer;
 	int		n;
 
-	backpointer = &s1[ft_strlen(s1) - 1];
+	backpointer = (char *)&s1[ft_strlen(s1) - 1];
 	while (*s1)
 	{
 		n = -1;
@@ -58,5 +58,5 @@ char	*ft_strtrim(char const *s1, char const *set)
 			break ;
 		set = set - n;
 	}
-	return (ft_make_ret(s1, backpointer));
+	return (ft_make_ret((char *)s1, backpointer));
 }

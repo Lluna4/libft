@@ -45,6 +45,9 @@ BONUS_SRC = ft_lstnew_bonus.c \
 
 OBJ = ${SRC:.c=.o} 
 
+%.o: %.c $(HEADER)
+	$(CC) $(FLAGS) -c $< -o $@
+
 
 $(NAME): ${OBJ} ${HEADER}
 	ar -rcs $(NAME) ${OBJ}

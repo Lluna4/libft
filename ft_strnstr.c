@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static char	*ft_test(char *a, int len2, int s, char *b)
+static char	*ft_test(char *a, size_t len2, size_t s, char *b)
 {
 	int	n;
 
@@ -43,18 +43,14 @@ static char	*ft_test(char *a, int len2, int s, char *b)
 
 char	*ft_strnstr(const char *a, const char *b, size_t size)
 {
-	int		len;
 	int		len2;
-	char	*buff;
 
-	len = ft_strlen(b) - 1;
 	len2 = ft_strlen(a);
-	buff = (char *)a;
-	if ((unsigned int)size > ft_strlen(a) || (unsigned int)size < 0)
+	if ((unsigned int)size > ft_strlen(a) || (int)size < 0)
 		size = ft_strlen(a);
 	if (*b == '\0')
 		return ((char *)a);
-	return (ft_test((char *)a, len2, size, (char *)b));
+	return (ft_test((char *)a, (size_t)len2, (size_t)size, (char *)b));
 }
 
 /*

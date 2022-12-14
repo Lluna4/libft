@@ -18,7 +18,7 @@ static int	ft_wordcount(char *a, char ch)
 
 	n = 1;
 	if (!*a)
-		return (NULL);
+		return (0);
 	while (*a)
 	{
 		if (*a == ch)
@@ -50,21 +50,18 @@ static int	ft_charcount(char *a, char ch)
 	return (len);
 }
 
-char	*ft_freeall(char **s)
+char	**ft_freeall(char **s)
 {
-	int	n;
-
-	n = -1;
 	while (*s)
 	{
 		free(*s);
 		s++;
 	}
 	free(s);
-	return (ft_strdup(" "));
+	return ((char **)(ft_strdup(" ")));
 }
 
-static char	*ft_test(char *s, char c, char **ret, char *buff)
+static char	**ft_test(char *s, char c, char **ret, char *buff)
 {
 	int	pointer;
 	int	n;
@@ -99,13 +96,15 @@ char	**ft_split(char const *s, char c)
 	int		n;
 	char	*buff;
 
+	buff = ft_calloc(ft_strlen(s), sizeof(char));
+	ft_memcpy(buff, (char *)s, ft_strlen(s));
 	if (!s)
 		return (NULL);
 	while (*s == c && *s)
 		s++;
-	n = ft_wordcount(s, c);
+	n = ft_wordcount((char *)s, c);
 	ret = ft_calloc(n + 1, sizeof(char *));
 	if (!ret)
 		return (NULL);
-	return (ft_test(s, c, ret, buff));
+	return (ft_test((char *)s, c, ret, buff));
 }
