@@ -21,7 +21,6 @@ SRC = ft_isascii.c \
 	ft_memchr.c \
 	ft_strchr.c \
 	ft_strncmp.c \
-	libft.h \
 	ft_isalpha.c \
 	ft_memcmp.c \
 	ft_strdup.c \
